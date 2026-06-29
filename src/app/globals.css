@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --everfit-wine: #6b1515;
+  --everfit-wine-dark: #4a0e0e;
+  --everfit-orange: #e63946;
+  --everfit-cream: #f5efe6;
+  --everfit-cream-dark: #ede4d8;
+  --everfit-charcoal: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--everfit-charcoal);
+  background-color: #fafafa;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@layer components {
+  .section-shell {
+    @apply py-20 md:py-28;
+  }
+
+  .section-shell-sm {
+    @apply py-14 md:py-20;
+  }
+
+  .btn-everfit {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-[background-color,border-color,color,box-shadow,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-everfit-wine focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  .btn-everfit-primary {
+    @apply btn-everfit bg-everfit-wine text-white hover:bg-everfit-wine-dark hover:shadow-lg hover:shadow-everfit-wine/20;
+  }
+
+  .btn-everfit-outline {
+    @apply btn-everfit border border-everfit-wine/25 bg-white text-everfit-wine hover:border-everfit-wine hover:bg-everfit-wine hover:text-white;
+  }
+
+  .btn-everfit-orange {
+    @apply btn-everfit bg-everfit-orange text-white hover:brightness-110 hover:shadow-lg hover:shadow-everfit-orange/25;
+  }
+
+  .btn-everfit-ghost {
+    @apply btn-everfit border border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold tracking-tight text-everfit-wine md:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+
+  .section-subtitle {
+    @apply mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg;
+  }
+
+  .card-everfit {
+    @apply overflow-hidden rounded-2xl border border-gray-100/80 bg-white shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-everfit-wine/15 hover:shadow-xl hover:shadow-everfit-wine/5;
+  }
+
+  .card-everfit-premium {
+    @apply card-everfit ring-1 ring-everfit-wine/5;
+  }
+
+  .badge-everfit {
+    @apply inline-block rounded-full bg-everfit-cream px-3.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-everfit-wine;
+  }
+
+  .meta-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-everfit-cream/80 px-3 py-1 text-xs font-medium text-everfit-wine tabular-nums;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-everfit-wine focus:px-4 focus:py-2 focus:text-white;
+  }
+
+  .nav-link-everfit {
+    @apply relative px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:text-everfit-wine;
+  }
+
+  .nav-link-everfit-active {
+    @apply text-everfit-wine;
+  }
+
+  .nav-link-everfit-active::after {
+    content: "";
+    @apply absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-everfit-orange;
+  }
+
+  .surface-cream {
+    @apply bg-gradient-to-b from-everfit-cream/50 to-white;
+  }
+
+  .surface-muted {
+    @apply bg-[#fafafa];
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    165deg,
+    rgba(26, 26, 26, 0.93) 0%,
+    rgba(107, 21, 21, 0.82) 45%,
+    rgba(26, 26, 26, 0.88) 100%
+  );
+}
+
+.hero-glow {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    rgba(230, 57, 70, 0.18) 0%,
+    transparent 70%
+  );
+}
+
+.stat-card {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.macro-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--everfit-cream);
+  overflow: hidden;
+}
+
+.macro-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--everfit-wine), var(--everfit-orange));
+}
+
+.footer-gradient {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.plans-grid-accent {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(107, 21, 21, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(230, 57, 70, 0.04) 0%, transparent 40%),
+    #fafafa;
+}
+
+.recipes-grid-accent {
+  background:
+    linear-gradient(180deg, rgba(245, 239, 230, 0.6) 0%, rgba(245, 239, 230, 0.3) 50%, #fafafa 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.15s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fitIconMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.fit-icon-marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.fit-icon-marquee-track {
+  animation: fitIconMarquee 35s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fit-icon-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .fit-icon-marquee-mask {
+    mask-image: none;
+  }
+}

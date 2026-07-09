@@ -30,21 +30,23 @@ export default function EverfitLogo({
   priority = false,
 }: EverfitLogoProps) {
   const src = logoSources[variant][theme];
-  const defaultWidth = variant === "full" ? 180 : 40;
-  const defaultHeight = variant === "full" ? 48 : 40;
+  const w = width ?? (variant === "full" ? 180 : 40);
+  const h = height ?? (variant === "full" ? 48 : 40);
 
   return (
     <Image
       src={src}
       alt="Everfit by Mich"
-      width={width ?? defaultWidth}
-      height={height ?? defaultHeight}
+      width={w}
+      height={h}
       priority={priority}
+      sizes={`${w}px`}
       className={cn(
-        "h-auto w-auto object-contain",
+        "block shrink-0 object-contain object-left",
         theme === "light" && variant === "full" && "brightness-110",
         className
       )}
+      style={{ width: w, height: h, maxWidth: "100%" }}
     />
   );
 }

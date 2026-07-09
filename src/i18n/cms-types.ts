@@ -24,6 +24,7 @@ export type CmsRecipeEntry = {
   instructions: string[];
   prepTime: string;
   category: string;
+  notes?: string | null;
 };
 
 export type CmsTestimonialEntry = {

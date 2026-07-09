@@ -90,6 +90,7 @@ export function localizeRecipe(
     instructions: JSON.stringify(entry.instructions),
     prepTime: entry.prepTime,
     category: entry.category,
+    notes: entry.notes !== undefined ? entry.notes : recipe.notes,
   };
 }
 

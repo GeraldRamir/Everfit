@@ -271,6 +271,7 @@ export type Dictionary = {
     knowMyStory: string;
     founderAlt: string;
     portraitFounderAlt: string;
+    fiber: string;
   };
 
   home: {
@@ -429,6 +430,9 @@ export type Dictionary = {
       macroDistribution: string;
       ingredients: string;
       preparation: string;
+      fiber: string;
+      notes: string;
+      fullRecipeMacros: string;
     };
     blog: {
       metadata: { title: string; description: string };
@@ -440,6 +444,9 @@ export type Dictionary = {
       notFound: string;
       metadataTitleSuffix: string;
       backToBlog: string;
+      readingTime: string;
+      relatedTitle: string;
+      viewAll: string;
     };
     sobreMi: {
       metadata: { title: string };

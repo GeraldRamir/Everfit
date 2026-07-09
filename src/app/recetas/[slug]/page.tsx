@@ -16,7 +16,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dict = getDictionary(locale);
   try {
     const { slug } = await params;
-    const dict = getDictionary(locale);
     const recipe = localizeRecipe(await getRecipe(slug), locale, dict.cms);
     return {
       title: `${recipe.title} | ${dict.pages.recipeDetail.metadataTitleSuffix}`,
@@ -46,6 +45,16 @@ export default async function RecipeDetailPage({ params }: Props) {
   const instructions = parseJsonArray(recipe.instructions);
   const totalMacros = recipe.protein + recipe.carbs + recipe.fat;
 
+  const macroCards = [
+    { label: common.calories, value: `${recipe.calories}`, unit: common.kcal },
+    { label: common.protein, value: `${recipe.protein}`, unit: common.grams },
+    { label: common.carbs, value: `${recipe.carbs}`, unit: common.grams },
+    { label: common.fat, value: `${recipe.fat}`, unit: common.grams },
+    ...(recipe.fiber != null
+      ? [{ label: pages.recipeDetail.fiber, value: `${recipe.fiber}`, unit: common.grams }]
+      : []),
+  ];
+
   return (
     <>
       <section className="bg-everfit-cream pb-12 pt-28">
@@ -66,13 +75,15 @@ export default async function RecipeDetailPage({ params }: Props) {
               </h1>
               <p className="mb-6 text-lg text-gray-600">{recipe.description}</p>
 
-              <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {[
-                  { label: common.calories, value: `${recipe.calories}`, unit: common.kcal },
-                  { label: common.protein, value: `${recipe.protein}`, unit: common.grams },
-                  { label: common.carbs, value: `${recipe.carbs}`, unit: common.grams },
-                  { label: common.fat, value: `${recipe.fat}`, unit: common.grams },
-                ].map((macro) => (
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                {pages.recipeDetail.fullRecipeMacros}
+              </p>
+              <div
+                className={`mb-6 grid gap-3 ${
+                  macroCards.length > 4 ? "grid-cols-2 sm:grid-cols-5" : "grid-cols-2 sm:grid-cols-4"
+                }`}
+              >
+                {macroCards.map((macro) => (
                   <div key={macro.label} className="rounded-xl bg-white p-3 text-center shadow-sm">
                     <div className="text-xs text-gray-500">{macro.label}</div>
                     <div className="text-lg font-bold text-everfit-wine tabular-nums">
@@ -94,12 +105,23 @@ export default async function RecipeDetailPage({ params }: Props) {
                 </span>
               </div>
 
+              {recipe.notes && (
+                <div className="mt-6 rounded-2xl border border-everfit-orange/20 bg-white/80 p-4">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-everfit-orange">
+                    {pages.recipeDetail.notes}
+                  </p>
+                  <p className="mb-0 text-sm leading-relaxed text-gray-700">{recipe.notes}</p>
+                </div>
+              )}
+
               <div className="mt-6">
                 <p className="mb-2 text-xs text-gray-500">{pages.recipeDetail.macroDistribution}</p>
                 <div className="macro-bar">
                   <div
                     className="macro-bar-fill"
-                    style={{ width: `${Math.min((recipe.protein / totalMacros) * 100, 100)}%` }}
+                    style={{
+                      width: `${Math.min(totalMacros ? (recipe.protein / totalMacros) * 100 : 0, 100)}%`,
+                    }}
                   />
                 </div>
               </div>

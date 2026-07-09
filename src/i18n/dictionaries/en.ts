@@ -551,6 +551,7 @@ export const en: Dictionary = {
     fat: "Fat",
     kcal: "kcal",
     grams: "g",
+    fiber: "fiber",
     servings: "serving(s)",
     macroDistribution: "Macro distribution",
     ingredients: "Ingredients",
@@ -772,6 +773,9 @@ export const en: Dictionary = {
       macroDistribution: "Macro distribution",
       ingredients: "Ingredients",
       preparation: "Preparation",
+      fiber: "Fiber",
+      notes: "Notes / macros per serving",
+      fullRecipeMacros: "Nutrition facts (full recipe)",
     },
     blog: {
       metadata: {
@@ -788,6 +792,9 @@ export const en: Dictionary = {
       notFound: "Article not found",
       metadataTitleSuffix: "Everfit Blog",
       backToBlog: "← Back to blog",
+      readingTime: "{minutes} min read",
+      relatedTitle: "Related articles",
+      viewAll: "View all",
     },
     sobreMi: {
       metadata: { title: "About Me | Michelle Ruiz — Everfit by Mich" },

@@ -62,6 +62,8 @@ export type Recipe = {
   protein: number;
   carbs: number;
   fat: number;
+  fiber?: number | null;
+  notes?: string | null;
   prepTime: string;
   servings: number;
   category: string;

@@ -8,6 +8,8 @@ type EverfitLogoProps = {
   width?: number;
   height?: number;
   priority?: boolean;
+  /** Fija px en pantalla — solo navbar (evita que en prod se vea gigante). */
+  fixedLayout?: boolean;
 };
 
 const logoSources = {
@@ -28,6 +30,7 @@ export default function EverfitLogo({
   width,
   height,
   priority = false,
+  fixedLayout = false,
 }: EverfitLogoProps) {
   const src = logoSources[variant][theme];
   const w = width ?? (variant === "full" ? 180 : 40);
@@ -40,13 +43,14 @@ export default function EverfitLogo({
       width={w}
       height={h}
       priority={priority}
-      sizes={`${w}px`}
+      sizes={fixedLayout ? `${w}px` : undefined}
       className={cn(
-        "block shrink-0 object-contain object-left",
+        "object-contain",
+        fixedLayout ? "block shrink-0 object-left" : "h-auto w-auto",
         theme === "light" && variant === "full" && "brightness-110",
         className
       )}
-      style={{ width: w, height: h, maxWidth: "100%" }}
+      style={fixedLayout ? { width: w, height: h, maxWidth: "100%" } : undefined}
     />
   );
 }

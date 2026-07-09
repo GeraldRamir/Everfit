@@ -58,20 +58,22 @@ export default function NavbarEverfit() {
       )}
     >
       <Container className="flex h-[4.25rem] items-center justify-between lg:h-[4.75rem]">
-        <Link href="/" className="relative z-50 flex shrink-0 items-center">
+        <Link href="/" className="relative z-50 flex max-h-full shrink-0 items-center">
           <EverfitLogo
             variant="full"
             theme="wine"
-            width={128}
-            height={34}
+            width={142}
+            height={38}
+            fixedLayout
             className="hidden lg:block"
             priority
           />
           <EverfitLogo
             variant="mark"
             theme="wine"
-            width={32}
-            height={32}
+            width={34}
+            height={34}
+            fixedLayout
             className="lg:hidden"
             priority
           />

@@ -95,7 +95,7 @@ export default async function PlanesPage() {
             <p className="mx-auto mb-8 max-w-xl text-white/80">
               {whyJoin.paragraphs[whyJoin.paragraphs.length - 1]}
             </p>
-            <Link href="/contacto" className="btn-everfit-orange px-8">
+            <Link href="/solicitud" className="btn-everfit-orange px-8">
               {whyJoin.cta}
             </Link>
           </div>
@@ -113,7 +113,7 @@ export default async function PlanesPage() {
             <p className="mx-auto mb-6 max-w-xl text-gray-600">
               {pages.planes.choosePlanText}
             </p>
-            <Link href="/contacto" className="btn-everfit-primary">
+            <Link href="/solicitud" className="btn-everfit-primary">
               {pages.planes.choosePlanCta}
             </Link>
           </div>

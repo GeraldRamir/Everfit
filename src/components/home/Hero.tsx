@@ -58,7 +58,7 @@ export default function Hero() {
               {hero.viewPlans}
               <ChevronRight size={18} aria-hidden="true" />
             </Link>
-            <Link href="/contacto" className="btn-everfit-ghost min-w-[200px] px-8 py-3.5 text-base">
+            <Link href="/solicitud" className="btn-everfit-ghost min-w-[200px] px-8 py-3.5 text-base">
               {hero.freeConsultation}
             </Link>
           </div>

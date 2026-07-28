@@ -3,6 +3,7 @@
 import Link from "next/link";
 import EverfitLogo from "@/components/ui/EverfitLogo";
 import Container from "@/components/ui/Container";
+import { SITE } from "@/lib/content";
 import { useI18n } from "@/i18n/client";
 
 function InstagramIcon({ size = 18 }: { size?: number }) {
@@ -15,18 +16,12 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-function YoutubeIcon({ size = 18 }: { size?: number }) {
+function AmazonIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-    </svg>
-  );
-}
-
-function TikTokIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z" />
+      <path d="M13.5 4.5c-2.4 0-4.1 1.3-4.1 3.4 0 2.1 1.6 3.1 3.8 3.8l1.1.3c1.3.4 1.9.8 1.9 1.6 0 .9-.8 1.5-2.1 1.5-1.3 0-2.3-.5-3.1-1.1l-1.1 1.5c1.1.9 2.6 1.5 4.3 1.5 2.6 0 4.3-1.4 4.3-3.5 0-2.1-1.5-3.1-3.8-3.8l-1.1-.3c-1.2-.3-1.8-.7-1.8-1.5 0-.8.8-1.4 1.9-1.4 1.1 0 2 .4 2.7.9l1-1.5c-1-.7-2.3-1.4-3.9-1.4z" />
+      <path d="M4.8 17.2c2.6 1.5 6.2 2.3 9.2 2.3 2.4 0 4.8-.5 6.7-1.5.4-.2.7.2.3.5-2.3 2.1-6 3.1-9 3.1-4.3 0-8.2-1.5-10.7-3.5-.3-.2-.1-.6.3-.4.1 0 .1 0 .2 0z" />
+      <path d="M20.8 16.2c.3-.4.1-.9-.4-.7-.9.3-1.2.4-2.1.5-.3 0-.4.3-.2.5.7.9 1.8 1.6 2.8 2 .4.2.8-.2.5-.6-.2-.2-.4-.5-.6-.7z" />
     </svg>
   );
 }
@@ -41,7 +36,7 @@ export default function Footer() {
       { href: "/retos", label: footer.links.fitChallenges },
       { href: "/transformaciones", label: footer.links.transformations },
       { href: "/blog", label: footer.links.blogMotivation },
-      { href: "/contacto", label: footer.links.onlineCoaching },
+      { href: "/solicitud", label: footer.links.onlineCoaching },
     ],
     empresa: [
       { href: "/sobre-mi", label: footer.links.aboutMich },
@@ -51,9 +46,8 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { label: footer.social.instagram, href: "#", Icon: InstagramIcon },
-    { label: footer.social.tiktok, href: "#", Icon: TikTokIcon },
-    { label: footer.social.youtube, href: "#", Icon: YoutubeIcon },
+    { label: footer.social.instagram, href: SITE.instagram, Icon: InstagramIcon },
+    { label: footer.social.amazon, href: SITE.amazon, Icon: AmazonIcon },
   ];
 
   return (
@@ -75,6 +69,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-[background-color,border-color,color] duration-200 hover:border-everfit-orange/50 hover:bg-everfit-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-everfit-orange"
                 >

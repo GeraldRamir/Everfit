@@ -36,7 +36,7 @@ export default function CTA() {
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
-            href="/contacto"
+            href="/solicitud"
             className="btn-everfit bg-white text-everfit-wine hover:bg-everfit-cream"
           >
             {cta.scheduleConsultation}

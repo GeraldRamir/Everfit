@@ -6,6 +6,7 @@ export const en: Dictionary = {
     brand: "Everfit by Mich",
     founder: "Michelle Ruiz",
     email: "everfitbymich@gmail.com",
+    whatsapp: "(829) 644-2271",
   },
 
   aboutImages: {
@@ -486,7 +487,7 @@ export const en: Dictionary = {
     companyHeading: "Everfit",
     copyright: "All rights reserved.",
     designed: "Designed to transform lives",
-    social: { instagram: "Instagram", tiktok: "TikTok", youtube: "YouTube" },
+    social: { instagram: "Instagram", amazon: "Amazon" },
     links: {
       trainingPlans: "Training Plans",
       fitChallenges: "Fit Challenges",
@@ -524,6 +525,7 @@ export const en: Dictionary = {
     step: "Step",
     coaching: "Coaching",
     popular: "Popular",
+    priceInUsd: "Price in US dollars (USD)",
     challenge: "Challenge",
     readArticle: "Read article →",
     viewMore: "View more",
@@ -587,7 +589,7 @@ export const en: Dictionary = {
       freeConsultation: "Free Consultation",
       stats: [
         { value: "500+", label: "Clients transformed" },
-        { value: "4+", label: "Years of experience" },
+        { value: "1+", label: "Years of experience" },
         { value: "50+", label: "Exclusive fit recipes" },
         { value: "100%", label: "Committed to you" },
       ],
@@ -629,7 +631,7 @@ export const en: Dictionary = {
     testimonials: {
       badge: "Testimonials",
       title: "Transformation stories",
-      subtitle: "Real results from real women who trusted Everfit.",
+      subtitle: "Real results from real clients who trusted Everfit.",
     },
     cta: {
       eyebrow: "Take the first step",
@@ -645,20 +647,20 @@ export const en: Dictionary = {
     metadata: {
       title: "Contact | Everfit by Mich",
       description:
-        "Book your free consultation or submit a service request to start your fitness transformation today.",
+        "Reach Michelle by email or WhatsApp, or submit your service application to start your fitness transformation.",
     },
     badge: "Contact",
-    title: "Request your service",
+    title: "Let's talk",
     subtitle:
-      "Complete the form and you'll receive a response within 24 hours. Your request goes directly to the admin panel.",
+      "I'm here for your questions. If you're ready to start, send your enrollment application.",
     contactInfoTitle: "Contact information",
     freeConsultTitle: "Free 15-min consultation",
     freeConsultText:
       "No commitment. We'll talk about your goals, assess your current situation, and I'll recommend the best path for you.",
-    formTitle: "Send your request",
-    formSubtitle:
-      "Choose the service you're interested in. When you submit, Michelle will receive a push notification in the admin panel.",
-    planMessageTemplate: "Hi Mich, I'd like information about {plan}.",
+    applyTitle: "Ready to start?",
+    applySubtitle:
+      "Complete the requirements form with your details, goals, and photos. Michelle will receive your request in the admin panel.",
+    applyCta: "Go to application form",
     items: {
       email: "Email",
       whatsapp: "WhatsApp",
@@ -667,8 +669,27 @@ export const en: Dictionary = {
       schedule: "Hours",
       scheduleValue: "Mon - Fri: 8:00 AM - 8:00 PM",
     },
+  },
+
+  solicitud: {
+    metadata: {
+      title: "Application | Everfit by Mich",
+      description:
+        "Complete your Everfit by Mich requirements: details, habits, goals, and front, back, and side photos.",
+    },
+    badge: "Requirements",
+    title: "Apply for your spot",
+    subtitle:
+      "Fill out this form honestly. Your application goes directly to Michelle.",
+    intro:
+      "These requirements help evaluate your case and build a plan that fits you. Take your time — there are no wrong answers.",
+    contactPrompt: "If you only want to ask a quick question, visit",
+    contactLink: "Contact",
+    formTitle: "Application form",
+    formSubtitle:
+      "Include your email and service of interest so we can reach you. Michelle will get a notification when you submit.",
     form: {
-      success: "Request sent successfully. I'll contact you soon.",
+      success: "Application sent successfully. I'll contact you soon.",
       submitError: "Error sending",
       unknownError: "Unknown error",
       name: "Name",
@@ -676,13 +697,38 @@ export const en: Dictionary = {
       email: "Email",
       emailPlaceholder: "you@email.com…",
       phone: "Phone / WhatsApp",
-      phonePlaceholder: "+1 809 000 0000…",
+      phonePlaceholder: "(829) 644-2271",
       subject: "Service of interest",
       subjectPlaceholder: "Select a service…",
-      message: "Message",
-      messagePlaceholder: "Tell me about your goals, experience, and any questions…",
-      submitting: "Sending request…",
-      submit: "Send request",
+      age: "Age",
+      agePlaceholder: "e.g. 28",
+      weight: "Weight",
+      weightPlaceholder: "e.g. 65 kg",
+      height: "Height",
+      heightPlaceholder: "e.g. 1.65 m",
+      dietHabits: "How do you usually eat?",
+      dietHabitsPlaceholder: "Describe your typical eating habits…",
+      sleepHours: "How many hours do you usually sleep?",
+      sleepHoursPlaceholder: "e.g. 6–7 hours",
+      medicalConditions: "Medical condition or allergies",
+      medicalConditionsPlaceholder:
+        "List conditions, injuries, or allergies. If none, write None…",
+      motivation: "What motivates you to change your lifestyle?",
+      motivationPlaceholder: "Tell me what drives you to take this step…",
+      biggestChallenge: "What do you think will be your biggest challenge?",
+      biggestChallengePlaceholder: "Consistency, nutrition, time, etc.…",
+      goal: "What is your goal?",
+      goalPlaceholder: "Describe your main goal…",
+      photosTitle: "Three photos",
+      photosHint: "Front, back, and side. JPG, PNG, or WEBP. Max 5 MB each.",
+      photoFront: "Front",
+      photoFrontHint: "Front photo",
+      photoBack: "Back",
+      photoBackHint: "Back photo",
+      photoSide: "Side",
+      photoSideHint: "Side / profile photo",
+      submitting: "Sending application…",
+      submit: "Submit application",
       subjects: [
         { value: "consulta-gratis", label: "Free Consultation" },
         { value: "plan-entrenamiento", label: "Training Plan" },
@@ -729,6 +775,9 @@ export const en: Dictionary = {
       whatYouAchieve: "What you'll achieve",
       whatIncludes: "What's included?",
       signUp: "Sign Up Now",
+      whatsappCta: "WhatsApp",
+      whatsappMessage:
+        "Hi Michelle! I'm interested in the {plan} plan. Could you tell me more?",
       personalizedCoaching: "Personalized coaching",
       yourPathBadge: "Your path",
       whatToExpect: "What to expect",
@@ -747,6 +796,12 @@ export const en: Dictionary = {
       title: "Everfit Challenges",
       subtitle:
         "Intensive programs with a set duration for concrete results. Choose the challenge that best fits your goal.",
+      emptyBadge: "Everfit Challenges",
+      emptyTitle: "Coming soon",
+      emptyMessage:
+        "We're preparing intensive challenges with clear goals and real results. They'll be available here very soon.",
+      emptyPlansCta: "View plans",
+      emptyApplyCta: "Submit application",
     },
     retoDetail: {
       notFound: "Challenge not found",

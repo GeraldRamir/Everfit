@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/ui/PageHeader";
 import RetoCard from "@/components/ui/RetoCard";
+import RetosComingSoonBanner from "@/components/ui/RetosComingSoonBanner";
 import CTA from "@/components/home/CTA";
 import { getDictionary } from "@/i18n";
 import { localizeChallenges } from "@/i18n/localize";
@@ -36,11 +37,21 @@ export default async function RetosPage() {
 
       <section className="section-shell">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {retos.map((reto) => (
-              <RetoCard key={reto.id} {...reto} />
-            ))}
-          </div>
+          {retos.length === 0 ? (
+            <RetosComingSoonBanner
+              badge={pages.retos.emptyBadge}
+              title={pages.retos.emptyTitle}
+              message={pages.retos.emptyMessage}
+              plansCta={pages.retos.emptyPlansCta}
+              applyCta={pages.retos.emptyApplyCta}
+            />
+          ) : (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {retos.map((reto) => (
+                <RetoCard key={reto.id} {...reto} />
+              ))}
+            </div>
+          )}
         </Container>
       </section>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock, Star } from "lucide-react";
 import { useI18n } from "@/i18n/client";
-import { cn } from "@/lib/utils";
+import { cn, formatPlanPrice } from "@/lib/utils";
 
 type PlanCardProps = {
   title: string;
@@ -29,8 +29,9 @@ export default function PlanCard({
   featured,
   highlight,
 }: PlanCardProps) {
-  const { dict } = useI18n();
+  const { locale, dict } = useI18n();
   const { common, cards } = dict;
+  const priceLabel = formatPlanPrice(price, slug, locale);
 
   return (
     <article
@@ -59,13 +60,18 @@ export default function PlanCard({
             {common.popular}
           </span>
         )}
-        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-2">
           <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
             {level}
           </span>
-          {price > 0 ? (
-            <span className="font-display text-2xl font-bold tabular-nums text-white">
-              ${price}
+          {priceLabel ? (
+            <span className="text-right">
+              <span className="block font-display text-2xl font-bold tabular-nums text-white">
+                {priceLabel}
+              </span>
+              <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-white/80">
+                USD
+              </span>
             </span>
           ) : (
             <span className="rounded-full bg-everfit-orange/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
@@ -76,7 +82,19 @@ export default function PlanCard({
       </div>
 
       <div className="flex flex-grow flex-col p-6">
-        <h3 className="mb-2 font-display text-xl font-bold text-everfit-wine">{title}</h3>
+        <h3 className="mb-1 font-display text-xl font-bold text-everfit-wine">{title}</h3>
+        {priceLabel ? (
+          <div className="mb-3">
+            <p className="mb-0 font-display text-2xl font-bold tabular-nums text-everfit-orange">
+              {priceLabel}
+            </p>
+            <p className="mb-0 text-xs font-medium text-gray-500">{common.priceInUsd}</p>
+          </div>
+        ) : (
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-everfit-orange">
+            {common.coaching}
+          </p>
+        )}
         <p className="mb-6 flex-grow text-sm leading-relaxed text-gray-600 line-clamp-3">
           {description}
         </p>

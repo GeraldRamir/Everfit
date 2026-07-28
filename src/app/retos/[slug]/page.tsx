@@ -157,7 +157,7 @@ export default async function RetoDetailPage({ params }: Props) {
 
                 <Link
 
-                  href={`/contacto?servicio=reto&plan=${encodeURIComponent(slug)}`}
+                  href={`/solicitud?servicio=reto&plan=${encodeURIComponent(slug)}`}
 
                   className="btn-everfit-primary px-8"
 

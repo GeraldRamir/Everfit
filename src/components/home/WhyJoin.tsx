@@ -33,7 +33,7 @@ export default function WhyJoin() {
             <p className="mt-6 font-display text-lg font-semibold text-everfit-wine">
               {whyJoin.closing}
             </p>
-            <Link href="/contacto" className="btn-everfit-primary mt-8">
+            <Link href="/solicitud" className="btn-everfit-primary mt-8">
               {whyJoin.cta}
             </Link>
           </div>

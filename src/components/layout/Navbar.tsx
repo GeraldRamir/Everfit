@@ -93,7 +93,7 @@ export default function NavbarEverfit() {
             </Link>
           ))}
           <LanguageSwitcher className="ml-2" />
-          <Link href="/contacto" className="btn-everfit-primary ml-2 px-5 py-2.5 text-sm">
+          <Link href="/solicitud" className="btn-everfit-primary ml-2 px-5 py-2.5 text-sm">
             {dict.nav.startNow}
           </Link>
         </nav>
@@ -141,7 +141,7 @@ export default function NavbarEverfit() {
           <div className="mt-4 flex justify-center">
             <LanguageSwitcher />
           </div>
-          <Link href="/contacto" className="btn-everfit-primary mt-4 w-full">
+          <Link href="/solicitud" className="btn-everfit-primary mt-4 w-full">
             {dict.nav.startNow}
           </Link>
         </div>

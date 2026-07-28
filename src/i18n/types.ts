@@ -50,6 +50,7 @@ export type Dictionary = {
     brand: string;
     founder: string;
     email: string;
+    whatsapp: string;
   };
 
   aboutImages: {
@@ -194,7 +195,7 @@ export type Dictionary = {
     companyHeading: string;
     copyright: string;
     designed: string;
-    social: { instagram: string; tiktok: string; youtube: string };
+    social: { instagram: string; amazon: string };
     links: {
       trainingPlans: string;
       fitChallenges: string;
@@ -223,6 +224,7 @@ export type Dictionary = {
     step: string;
     coaching: string;
     popular: string;
+    priceInUsd: string;
     challenge: string;
     readArticle: string;
     viewMore: string;
@@ -338,9 +340,9 @@ export type Dictionary = {
     contactInfoTitle: string;
     freeConsultTitle: string;
     freeConsultText: string;
-    formTitle: string;
-    formSubtitle: string;
-    planMessageTemplate: string;
+    applyTitle: string;
+    applySubtitle: string;
+    applyCta: string;
     items: {
       email: string;
       whatsapp: string;
@@ -349,6 +351,18 @@ export type Dictionary = {
       schedule: string;
       scheduleValue: string;
     };
+  };
+
+  solicitud: {
+    metadata: { title: string; description: string };
+    badge: string;
+    title: string;
+    subtitle: string;
+    intro: string;
+    contactPrompt: string;
+    contactLink: string;
+    formTitle: string;
+    formSubtitle: string;
     form: {
       success: string;
       submitError: string;
@@ -361,8 +375,32 @@ export type Dictionary = {
       phonePlaceholder: string;
       subject: string;
       subjectPlaceholder: string;
-      message: string;
-      messagePlaceholder: string;
+      age: string;
+      agePlaceholder: string;
+      weight: string;
+      weightPlaceholder: string;
+      height: string;
+      heightPlaceholder: string;
+      dietHabits: string;
+      dietHabitsPlaceholder: string;
+      sleepHours: string;
+      sleepHoursPlaceholder: string;
+      medicalConditions: string;
+      medicalConditionsPlaceholder: string;
+      motivation: string;
+      motivationPlaceholder: string;
+      biggestChallenge: string;
+      biggestChallengePlaceholder: string;
+      goal: string;
+      goalPlaceholder: string;
+      photosTitle: string;
+      photosHint: string;
+      photoFront: string;
+      photoFrontHint: string;
+      photoBack: string;
+      photoBackHint: string;
+      photoSide: string;
+      photoSideHint: string;
       submitting: string;
       submit: string;
       subjects: SubjectOption[];
@@ -397,6 +435,8 @@ export type Dictionary = {
       whatYouAchieve: string;
       whatIncludes: string;
       signUp: string;
+      whatsappCta: string;
+      whatsappMessage: string;
       personalizedCoaching: string;
       yourPathBadge: string;
       whatToExpect: string;
@@ -409,6 +449,11 @@ export type Dictionary = {
       badge: string;
       title: string;
       subtitle: string;
+      emptyBadge: string;
+      emptyTitle: string;
+      emptyMessage: string;
+      emptyPlansCta: string;
+      emptyApplyCta: string;
     };
     retoDetail: {
       notFound: string;

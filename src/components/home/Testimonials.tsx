@@ -28,7 +28,7 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
           subtitle={testimonialsCopy.subtitle}
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <blockquote key={t.id} className="card-everfit flex flex-col p-6">
               <StarRating rating={t.rating} />
@@ -36,7 +36,7 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
                 &ldquo;{t.content}&rdquo;
               </p>
               <footer className="flex items-center gap-3 border-t border-gray-100 pt-5">
-                {t.image && (
+                {t.image ? (
                   <Image
                     src={t.image}
                     alt=""
@@ -44,6 +44,18 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
                     height={44}
                     className="rounded-full object-cover"
                   />
+                ) : (
+                  <span
+                    aria-hidden="true"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-everfit-cream font-display text-sm font-bold text-everfit-wine"
+                  >
+                    {t.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .slice(0, 2)
+                      .join("")
+                      .toUpperCase()}
+                  </span>
                 )}
                 <div className="min-w-0">
                   <cite className="block font-display text-sm font-bold not-italic text-everfit-wine">

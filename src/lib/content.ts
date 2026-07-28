@@ -1,7 +1,17 @@
 export const SITE = {
   email: "everfitbymich@gmail.com",
+  whatsapp: "(829) 644-2271",
+  whatsappE164: "18296442271",
   founderPhoto: "/images/aboutme/michelle-07.jpeg",
+  instagram: "https://www.instagram.com/everfitbymich/",
+  amazon:
+    "https://www.amazon.com/gp/profile/amzn1.account.AGP4BV7B3YOFECFQFGH2HQJWO5DA?ccs_id=40a9cae9-1bc3-4231-a7de-7d658376e229&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacpa1rQMgAZwP_XfeUxFrNpvP7iYo02vbEakyu7-S8r98HPO442w7SbVczfBA_aem_WMAnbIdodAau7mzr4M0kpw",
 } as const;
+
+export function whatsappUrl(message?: string) {
+  const base = `https://wa.me/${SITE.whatsappE164}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
 
 export const ABOUT_IMAGES = {
   hero: "/images/aboutme/michelle-09.jpeg",

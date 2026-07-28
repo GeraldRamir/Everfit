@@ -63,13 +63,27 @@ model BlogPost {
 }
 
 model ContactMessage {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  phone     String?
-  subject   String
-  message   String
-  createdAt DateTime @default(now())
+  id                String   @id @default(cuid())
+  name              String
+  email             String
+  phone             String?
+  subject           String
+  message           String
+  age               String?
+  weight            String?
+  height            String?
+  dietHabits        String?
+  sleepHours        String?
+  medicalConditions String?
+  motivation        String?
+  biggestChallenge  String?
+  goal              String?
+  photoFront        String?
+  photoBack         String?
+  photoSide         String?
+  sourcePlan        String?
+  sourcePage        String?
+  createdAt         DateTime @default(now())
 }
 
 model Service {

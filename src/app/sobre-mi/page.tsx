@@ -48,7 +48,7 @@ export default async function SobreMiPage() {
             <p className="mx-auto mb-8 max-w-xl text-gray-600">
               {pages.sobreMi.readyText}
             </p>
-            <Link href="/contacto" className="btn-everfit-primary px-8">
+            <Link href="/solicitud" className="btn-everfit-primary px-8">
               {whyJoin.cta}
             </Link>
           </div>

@@ -71,7 +71,7 @@ export default async function TransformacionesPage() {
             <p className="mx-auto mb-8 max-w-xl text-white/80">
               {transformationUi.nextStoryText}
             </p>
-            <Link href="/contacto" className="btn-everfit-orange px-8">
+            <Link href="/solicitud" className="btn-everfit-orange px-8">
               {dict.pages.transformaciones.startNow}
             </Link>
           </div>

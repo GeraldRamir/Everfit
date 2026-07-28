@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import RetoCard from "@/components/ui/RetoCard";
+import RetosComingSoonBanner from "@/components/ui/RetosComingSoonBanner";
 import { useI18n } from "@/i18n/client";
 
 type Reto = {
@@ -20,6 +21,8 @@ type Reto = {
 export default function FeaturedRetos({ retos }: { retos: Reto[] }) {
   const { dict } = useI18n();
   const { featuredRetos } = dict.home;
+  const empty = dict.pages.retos;
+  const hasRetos = retos.length > 0;
 
   return (
     <section className="section-shell surface-muted">
@@ -32,26 +35,40 @@ export default function FeaturedRetos({ retos }: { retos: Reto[] }) {
             align="left"
             className="mb-0"
           />
-          <Link
-            href="/retos"
-            className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-everfit-wine transition-colors hover:text-everfit-orange md:inline-flex"
-          >
-            {featuredRetos.viewAll}
-            <ChevronRight size={16} aria-hidden="true" />
-          </Link>
+          {hasRetos && (
+            <Link
+              href="/retos"
+              className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-everfit-wine transition-colors hover:text-everfit-orange md:inline-flex"
+            >
+              {featuredRetos.viewAll}
+              <ChevronRight size={16} aria-hidden="true" />
+            </Link>
+          )}
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {retos.map((reto) => (
-            <RetoCard key={reto.id} {...reto} />
-          ))}
-        </div>
+        {hasRetos ? (
+          <>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {retos.map((reto) => (
+                <RetoCard key={reto.id} {...reto} />
+              ))}
+            </div>
 
-        <div className="mt-12 text-center md:hidden">
-          <Link href="/retos" className="btn-everfit-outline">
-            {featuredRetos.viewAllMobile}
-          </Link>
-        </div>
+            <div className="mt-12 text-center md:hidden">
+              <Link href="/retos" className="btn-everfit-outline">
+                {featuredRetos.viewAllMobile}
+              </Link>
+            </div>
+          </>
+        ) : (
+          <RetosComingSoonBanner
+            badge={empty.emptyBadge}
+            title={empty.emptyTitle}
+            message={empty.emptyMessage}
+            plansCta={empty.emptyPlansCta}
+            applyCta={empty.emptyApplyCta}
+          />
+        )}
       </Container>
     </section>
   );

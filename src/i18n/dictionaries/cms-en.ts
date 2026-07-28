@@ -30,7 +30,7 @@ export const cmsEn: CmsContent = {
         "The perfect place to start. Build healthy habits, learn proper training, and create a solid foundation with personalized guidance.",
       longDesc:
         "Everfit Ignite is designed for those taking their first step or rebuilding their relationship with fitness. You'll learn technique, structure, and habits you can maintain. Includes personalized training, nutrition guidance, and Michelle's support so you start with confidence and clarity.",
-      duration: "Ongoing program",
+      duration: "Monthly",
       level: "Foundation",
       features: [
         "Personalized training adapted to your level",
@@ -46,7 +46,7 @@ export const cmsEn: CmsContent = {
         "Take your results to the next level. Designed for those ready to push harder, stay accountable, and progress faster.",
       longDesc:
         "Everfit Power is for those who already have a base and want more visible results with greater support. More structure, more accountability, and frequent adjustments to keep you on track. Michelle will be closer to you at every phase of the process.",
-      duration: "Ongoing program",
+      duration: "3 months",
       level: "Progress",
       features: [
         "Advanced personalized training program",
@@ -62,7 +62,7 @@ export const cmsEn: CmsContent = {
         "The ultimate coaching experience. The most complete program with personalized coaching, close guidance, and everything you need for your best results.",
       longDesc:
         "Everfit Elite is the premium Everfit by Mich experience. Highly personalized coaching, direct communication, and a comprehensive plan designed exclusively for you. If you're looking for the highest level of support and results, this is your program.",
-      duration: "Ongoing program",
+      duration: "6 months",
       level: "Elite",
       features: [
         "Highly personalized 1:1 coaching",
@@ -245,20 +245,30 @@ export const cmsEn: CmsContent = {
   },
 
   testimonials: {
-    "María González": {
-      role: "Everfit Ignite Client",
+    "Daniela Ceballos": {
+      role: "Everfit Client",
       content:
-        "Michelle changed my relationship with the gym. Her constant support and realistic approach made all the difference.",
+        "Thank you so much for your excellent work. I applaud myself for my discipline, but without your help and motivation I wouldn't have made it.",
     },
-    "Carolina Ruiz": {
-      role: "Everfit Power Client",
+    "Mayorly Rodríguez": {
+      role: "Everfit Client",
       content:
-        "Michelle's routines are challenging but adapted to my level. I feel stronger and more confident than ever.",
+        "Awwww thank you — I'm working so hard to reach my goal of feeling better about my body ❤️ Michelle, thank you too for helping me build such strong motivation and discipline.",
     },
-    "Ana Lucía Pérez": {
-      role: "Everfit Elite Client",
+    Eimy: {
+      role: "Everfit Client",
       content:
-        "Michelle taught me everything from scratch with patience. Now I train with confidence and love the process.",
+        "Thank you Michelle — I'd never been able to lose weight before, and dropping 12 pounds in one month without going hungry has been incredible. You're the best!",
+    },
+    "Daison Cabral": {
+      role: "Everfit Client",
+      content:
+        "With Michelle I achieved my goals in record time — in just one month I lost 8 pounds. Eight months later, I feel and look like I'm in the best shape of my life.",
+    },
+    Abelcio: {
+      role: "Everfit Client",
+      content:
+        "Michii, thank you for motivating me and helping me get better every day. Today I feel more confident in myself and better about my body, thanks to the results I saw with your step-by-step plan.",
     },
   },
 

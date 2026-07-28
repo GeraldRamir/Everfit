@@ -64,7 +64,7 @@ export default async function AboutWhyJoin() {
               })}
             </div>
 
-            <Link href="/contacto" className="btn-everfit-primary">
+            <Link href="/solicitud" className="btn-everfit-primary">
               {whyJoin.cta}
             </Link>
           </div>

@@ -53,8 +53,8 @@ async function main() {
           "El lugar perfecto para empezar. Construye hábitos saludables, aprende entrenamiento correcto y crea una base sólida con guía personalizada.",
         longDesc:
           "Everfit Ignite está diseñado para quienes dan su primer paso o quieren reconstruir su relación con el fitness. Aprenderás técnica, estructura y hábitos que puedes mantener. Incluye entrenamiento personalizado, orientación nutricional y el apoyo de Michelle para que empieces con confianza y claridad.",
-        price: 0,
-        duration: "Programa continuo",
+        price: 70,
+        duration: "Mensual",
         level: "Fundación",
         features: JSON.stringify([
           "Entrenamiento personalizado adaptado a tu nivel",
@@ -75,8 +75,8 @@ async function main() {
           "Lleva tus resultados al siguiente nivel. Diseñado para quienes están listas para exigirse más, mantenerse responsables y progresar más rápido.",
         longDesc:
           "Everfit Power es para quienes ya tienen base y quieren resultados más visibles con mayor acompañamiento. Más estructura, más accountability y ajustes frecuentes para mantenerte en el camino. Michelle estará más cerca de ti en cada fase del proceso.",
-        price: 0,
-        duration: "Programa continuo",
+        price: 180,
+        duration: "3 meses",
         level: "Progreso",
         features: JSON.stringify([
           "Programa de entrenamiento avanzado personalizado",
@@ -97,8 +97,8 @@ async function main() {
           "La experiencia de coaching definitiva. El programa más completo con coaching personalizado, guía cercana y todo lo que necesitas para tus mejores resultados.",
         longDesc:
           "Everfit Elite es la experiencia premium de Everfit by Mich. Coaching altamente personalizado, comunicación directa y un plan integral diseñado exclusivamente para ti. Si buscas el máximo nivel de apoyo y resultados, este es tu programa.",
-        price: 0,
-        duration: "Programa continuo",
+        price: 330,
+        duration: "6 meses",
         level: "Elite",
         features: JSON.stringify([
           "Coaching 1:1 altamente personalizado",
@@ -342,31 +342,44 @@ async function main() {
   await prisma.testimonial.createMany({
     data: [
       {
-        name: "María González",
-        role: "Cliente Everfit Ignite",
+        name: "Daniela Ceballos",
+        role: "Cliente Everfit",
         content:
-          "Michelle cambió mi relación con el gym. Su apoyo constante y enfoque realista hicieron toda la diferencia.",
+          "Muchas gracias por tu excelente trabajo, me aplaudo por mi disciplina pero sin tu ayuda y motivación no lo hubiese logrado.",
         rating: 5,
-        image:
-          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+        image: null,
       },
       {
-        name: "Carolina Ruiz",
-        role: "Cliente Everfit Power",
+        name: "Mayorly Rodríguez",
+        role: "Cliente Everfit",
         content:
-          "Las rutinas de Michelle son desafiantes pero adaptadas a mi nivel. Me siento más fuerte y segura que nunca.",
+          "Awwww gracias me estoy esforzando mucho para cumplir mi meta de sentirme mejor con mi cuerpo ❤️ Michelle muchas gracias también porque me has hecho crear una motivación y disciplina muy fuerte.",
         rating: 5,
-        image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+        image: null,
       },
       {
-        name: "Ana Lucía Pérez",
-        role: "Cliente Everfit Elite",
+        name: "Eimy",
+        role: "Cliente Everfit",
         content:
-          "Michelle me enseñó todo desde cero con paciencia. Ahora entreno con confianza y amo el proceso.",
+          "Gracias Michelle, nunca había podido bajar de peso y bajar 12 libras en 1 mes sin pasar hambre ha sido increíble, eres la mejor!",
         rating: 5,
-        image:
-          "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+        image: null,
+      },
+      {
+        name: "Daison Cabral",
+        role: "Cliente Everfit",
+        content:
+          "Con Michelle pude lograr mis metas en tiempo récord, en tan solo un mes logré bajar 8 libras. 8 meses después y me siento y estoy en mi mejor forma física.",
+        rating: 5,
+        image: null,
+      },
+      {
+        name: "Abelcio",
+        role: "Cliente Everfit",
+        content:
+          "Michii gracias por motivarme y por ayudarme hacer mejor cada día, hoy me siento más confiado de mí mismo y me siento mejor con mi cuerpo, gracias a los resultados que vi con tu plan paso a paso.",
+        rating: 5,
+        image: null,
       },
     ],
   });

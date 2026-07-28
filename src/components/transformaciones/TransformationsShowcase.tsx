@@ -110,7 +110,7 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
                       : "(max-width: 640px) 100vw, 33vw"
                   }
                 />
-                <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-everfit-wine opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100">
+                <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-everfit-wine shadow-sm opacity-100 md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100">
                   <ZoomIn size={14} aria-hidden="true" />
                   {transformationUi.enlarge}
                 </span>
@@ -153,7 +153,7 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
         >
           <button
             type="button"
-            className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
             onClick={close}
             aria-label={transformationUi.close}
           >
@@ -162,7 +162,7 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
 
           <button
             type="button"
-            className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 md:inline-flex"
+            className="absolute left-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-3"
             onClick={(event) => {
               event.stopPropagation();
               showPrev();
@@ -174,7 +174,7 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
 
           <button
             type="button"
-            className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 md:inline-flex"
+            className="absolute right-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-3"
             onClick={(event) => {
               event.stopPropagation();
               showNext();
@@ -185,10 +185,10 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
           </button>
 
           <div
-            className="grid max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-2xl bg-everfit-charcoal shadow-2xl lg:grid-cols-5"
+            className="grid max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-everfit-charcoal shadow-2xl lg:grid-cols-5 lg:overflow-hidden"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[4/5] bg-black lg:col-span-3 lg:aspect-auto lg:min-h-[32rem]">
+            <div className="relative aspect-[4/5] max-h-[55vh] bg-black lg:col-span-3 lg:aspect-auto lg:max-h-none lg:min-h-[32rem]">
               <Image
                 src={active.image}
                 alt={active.alt}
@@ -209,7 +209,7 @@ export default function TransformationsShowcase({ items }: TransformationsShowca
               </span>
             </div>
 
-            <div className="flex flex-col justify-center p-6 text-white lg:col-span-2 lg:p-8">
+            <div className="flex flex-col justify-center p-5 text-white sm:p-6 lg:col-span-2 lg:p-8">
               <span className="mb-4 text-xs font-semibold uppercase tracking-wider text-everfit-orange">
                 {transformationUi.storyOf
                   .replace("{current}", String(activeIndex + 1))

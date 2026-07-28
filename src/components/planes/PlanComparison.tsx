@@ -22,11 +22,14 @@ export default async function PlanComparison() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-white shadow-sm">
-      <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+    <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-white shadow-sm [-webkit-overflow-scrolling:touch]">
+      <table className="w-full min-w-[560px] border-collapse text-left text-sm md:min-w-[640px]">
         <thead>
           <tr className="border-b border-gray-100">
-            <th scope="col" className="p-4 font-medium text-gray-500 md:p-6">
+            <th
+              scope="col"
+              className="sticky left-0 z-10 bg-white p-3 text-left font-medium text-gray-500 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.08)] md:p-6"
+            >
               {planComparison.featureColumn}
             </th>
             {tiers.map((tier) => (
@@ -55,7 +58,7 @@ export default async function PlanComparison() {
               key={row.label}
               className={index % 2 === 0 ? "bg-everfit-cream/30" : "bg-white"}
             >
-              <th scope="row" className="p-4 font-medium text-gray-700 md:p-6">
+              <th scope="row" className="sticky left-0 z-10 bg-inherit p-3 font-medium text-gray-700 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.08)] md:p-6">
                 {row.label}
               </th>
               <td className="p-4 text-center md:p-6">

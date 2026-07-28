@@ -11,7 +11,7 @@ import { localizePlan, localizePlans } from "@/i18n/localize";
 import { getLocale } from "@/i18n/server";
 import { getPlan, getPlans, parseJsonArray } from "@/lib/api";
 import { whatsappUrl } from "@/lib/content";
-import { formatPlanPrice } from "@/lib/utils";
+import { formatPlanPriceParts } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -58,7 +58,7 @@ export default async function PlanDetailPage({ params }: Props) {
     .filter((p) => p.slug !== slug)
     .sort((a, b) => PLAN_ORDER.indexOf(a.slug) - PLAN_ORDER.indexOf(b.slug));
 
-  const priceLabel = formatPlanPrice(plan.price, plan.slug, locale);
+  const priceParts = formatPlanPriceParts(plan.price, plan.slug, locale);
   const whatsappHref = whatsappUrl(
     pages.planDetail.whatsappMessage.replace("{plan}", plan.title)
   );
@@ -75,16 +75,27 @@ export default async function PlanDetailPage({ params }: Props) {
               <span className="badge-everfit mb-4 inline-block bg-everfit-orange/20 text-everfit-orange">
                 {plan.level}
               </span>
+              {priceParts?.onSale && (
+                <span className="mb-4 ml-2 inline-block rounded-full bg-everfit-orange px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-white">
+                  {dict.home.anniversary.saleBadge}
+                </span>
+              )}
               <h1 className="mb-2 font-display text-4xl font-bold md:text-5xl">{plan.title}</h1>
               {details && (
                 <p className="mb-4 text-lg text-everfit-orange">{details.tagline}</p>
               )}
               <p className="mb-6 text-lg text-white/75">{plan.description}</p>
               <div className="flex flex-wrap items-center gap-4">
-                {priceLabel ? (
+                {priceParts ? (
                   <div>
+                    {priceParts.original && (
+                      <p className="mb-1 text-sm text-white/50">
+                        {dict.home.anniversary.wasPrice}{" "}
+                        <span className="line-through">{priceParts.original}</span>
+                      </p>
+                    )}
                     <span className="font-display text-3xl font-bold tabular-nums text-everfit-orange">
-                      {priceLabel}
+                      {priceParts.current}
                     </span>
                     <p className="mb-0 mt-1 text-xs font-medium text-white/60">{common.priceInUsd}</p>
                   </div>
@@ -177,10 +188,16 @@ export default async function PlanDetailPage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
-                {priceLabel && (
+                {priceParts && (
                   <div className="mt-6">
+                    {priceParts.original && (
+                      <p className="mb-1 text-sm text-gray-400">
+                        {dict.home.anniversary.wasPrice}{" "}
+                        <span className="line-through">{priceParts.original}</span>
+                      </p>
+                    )}
                     <p className="mb-0 font-display text-2xl font-bold tabular-nums text-everfit-wine">
-                      {priceLabel}
+                      {priceParts.current}
                       <span className="ml-2 text-sm font-medium text-gray-500">{plan.duration}</span>
                     </p>
                     <p className="mb-0 mt-1 text-xs font-medium text-gray-500">{common.priceInUsd}</p>

@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -35,19 +36,20 @@ body {
   background-color: #fafafa;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  overflow-x: clip;
 }
 
 @layer components {
   .section-shell {
-    @apply py-20 md:py-28;
+    @apply py-14 md:py-28;
   }
 
   .section-shell-sm {
-    @apply py-14 md:py-20;
+    @apply py-10 md:py-20;
   }
 
   .btn-everfit {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-[background-color,border-color,color,box-shadow,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-everfit-wine focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-[background-color,border-color,color,box-shadow,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-everfit-wine focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
   }
 
   .btn-everfit-primary {
@@ -210,6 +212,107 @@ body {
     animation: fadeIn 0.8s ease-out 0.15s forwards;
     opacity: 0;
   }
+
+  .anniversary-3d-float {
+    animation: anniversaryFloat 5.5s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transform-origin: 55% 55%;
+    filter: drop-shadow(22px 34px 28px rgba(20, 12, 12, 0.42));
+    will-change: transform;
+  }
+
+  .anniversary-3d-stage {
+    transform-style: preserve-3d;
+    perspective: 1400px;
+    perspective-origin: 40% 45%;
+  }
+
+  .anniversary-orbit-text {
+    animation: anniversaryOrbit 18s linear infinite;
+    transform-origin: 50% 50%;
+  }
+
+  .anniversary-hero-photo {
+    animation: anniversaryKenBurns 18s ease-in-out infinite alternate;
+    transform-origin: 68% 20%;
+  }
+
+  .anniversary-discount-chip {
+    animation: anniversaryPulseSoft 2.8s ease-in-out infinite;
+  }
+
+  .anniversary-discount-hero {
+    animation: anniversaryPortraitIn 0.85s ease-out both;
+  }
+
+  .anniversary-discount-watermark {
+    animation: anniversaryPulseSoft 4s ease-in-out infinite;
+  }
+
+  .anniversary-icon-pill {
+    transition: transform 0.35s ease, background-color 0.35s ease;
+  }
+
+  .anniversary-icon-pill:hover {
+    transform: scale(1.08);
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .anniversary-cta-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.28) 45%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    animation: anniversaryShine 3.8s ease-in-out infinite;
+  }
+
+  .anniversary-hero-title {
+    animation: anniversaryPortraitIn 0.9s ease-out both;
+  }
+
+  .anniversary-hero-card {
+    animation: anniversaryCardIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .anniversary-collage-square {
+    animation: anniversaryLayerFloat 7s ease-in-out infinite;
+  }
+
+  .anniversary-collage-floral {
+    animation: anniversaryLayerFloat 9s ease-in-out infinite reverse;
+  }
+
+  .anniversary-collage-portrait {
+    animation: anniversaryPortraitIn 1.1s ease-out both;
+  }
+
+  .anniversary-collage-letter {
+    animation: anniversaryLetterIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+
+  .anniversary-collage-dot {
+    animation: anniversaryPulse 3.2s ease-in-out infinite;
+  }
+
+  .anniversary-collage-product {
+    animation: anniversaryFloat 6s ease-in-out infinite;
+    transform-origin: center;
+  }
+}
+
+.anniversary-serif {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.anniversary-script {
+  font-family: var(--font-script), "Segoe Script", cursive;
+  font-style: normal;
 }
 
 @keyframes fadeIn {
@@ -220,6 +323,146 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes anniversaryFloat {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 4px, 0)
+      rotateX(18deg)
+      rotateY(-28deg)
+      rotateZ(-8deg)
+      scale3d(1.08, 1.08, 1.08);
+  }
+  50% {
+    transform:
+      translate3d(6px, -16px, 36px)
+      rotateX(12deg)
+      rotateY(-16deg)
+      rotateZ(-3deg)
+      scale3d(1.12, 1.12, 1.12);
+  }
+}
+
+@keyframes anniversaryOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anniversaryLayerFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes anniversaryPortraitIn {
+  from {
+    opacity: 0;
+    transform: translate3d(18px, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes anniversaryLetterIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-12px, 28px, 0) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes anniversaryPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.75;
+  }
+}
+
+@keyframes anniversaryPulseSoft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(230, 57, 70, 0);
+  }
+}
+
+@keyframes anniversaryKenBurns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+  }
+}
+
+@keyframes anniversaryShine {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  75%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes anniversaryCardIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anniversary-3d-float {
+    animation: none;
+    transform:
+      translate3d(0, 0, 0)
+      rotateX(16deg)
+      rotateY(-24deg)
+      rotateZ(-7deg)
+      scale3d(1.08, 1.08, 1.08);
+    filter: drop-shadow(22px 34px 28px rgba(20, 12, 12, 0.42));
+  }
+
+  .anniversary-orbit-text,
+  .anniversary-collage-square,
+  .anniversary-collage-floral,
+  .anniversary-collage-dot,
+  .anniversary-collage-product,
+  .anniversary-hero-photo,
+  .anniversary-discount-chip,
+  .anniversary-cta-shine::after,
+  .anniversary-hero-title,
+  .anniversary-hero-card {
+    animation: none;
   }
 }
 

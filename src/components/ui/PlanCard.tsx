@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock, Star } from "lucide-react";
 import { useI18n } from "@/i18n/client";
-import { cn, formatPlanPrice } from "@/lib/utils";
+import { cn, formatPlanPriceParts } from "@/lib/utils";
 
 type PlanCardProps = {
   title: string;
@@ -30,8 +30,8 @@ export default function PlanCard({
   highlight,
 }: PlanCardProps) {
   const { locale, dict } = useI18n();
-  const { common, cards } = dict;
-  const priceLabel = formatPlanPrice(price, slug, locale);
+  const { common, cards, home } = dict;
+  const priceParts = formatPlanPriceParts(price, slug, locale);
 
   return (
     <article
@@ -54,8 +54,19 @@ export default function PlanCard({
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-        {featured && (
+        {priceParts?.onSale && (
+          <span className="absolute right-4 top-4 rounded-full bg-everfit-orange px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-white shadow-lg">
+            {home.anniversary.saleBadge}
+          </span>
+        )}
+        {featured && !priceParts?.onSale && (
           <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-everfit-orange px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-white shadow-lg">
+            <Star size={11} fill="currentColor" aria-hidden="true" />
+            {common.popular}
+          </span>
+        )}
+        {featured && priceParts?.onSale && (
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-everfit-wine shadow-lg">
             <Star size={11} fill="currentColor" aria-hidden="true" />
             {common.popular}
           </span>
@@ -64,10 +75,15 @@ export default function PlanCard({
           <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
             {level}
           </span>
-          {priceLabel ? (
+          {priceParts ? (
             <span className="text-right">
+              {priceParts.original && (
+                <span className="mb-0.5 block text-xs text-white/70 line-through">
+                  {priceParts.original}
+                </span>
+              )}
               <span className="block font-display text-2xl font-bold tabular-nums text-white">
-                {priceLabel}
+                {priceParts.current}
               </span>
               <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-white/80">
                 USD
@@ -83,10 +99,16 @@ export default function PlanCard({
 
       <div className="flex flex-grow flex-col p-6">
         <h3 className="mb-1 font-display text-xl font-bold text-everfit-wine">{title}</h3>
-        {priceLabel ? (
+        {priceParts ? (
           <div className="mb-3">
+            {priceParts.original && (
+              <p className="mb-0 text-sm text-gray-400">
+                {home.anniversary.wasPrice}{" "}
+                <span className="line-through">{priceParts.original}</span>
+              </p>
+            )}
             <p className="mb-0 font-display text-2xl font-bold tabular-nums text-everfit-orange">
-              {priceLabel}
+              {priceParts.current}
             </p>
             <p className="mb-0 text-xs font-medium text-gray-500">{common.priceInUsd}</p>
           </div>

@@ -286,6 +286,43 @@ export type Dictionary = {
       freeConsultation: string;
       stats: StatEntry[];
     };
+    anniversary: {
+      badge: string;
+      eyebrow: string;
+      title: string;
+      titleHighlight: string;
+      headlineBefore: string;
+      headlineScript: string;
+      headlineAfter: string;
+      headline1Lead: string;
+      headline1Accent: string;
+      headline2Lead: string;
+      headline2Accent: string;
+      ratingLabel: string;
+      description: string;
+      descriptionBefore: string;
+      descriptionHighlight1: string;
+      descriptionMiddle: string;
+      descriptionHighlight2: string;
+      descriptionAfter: string;
+      discountLabel: string;
+      countdownLabel: string;
+      countdown: {
+        days: string;
+        hours: string;
+        minutes: string;
+        seconds: string;
+      };
+      ctaPlans: string;
+      ctaCircle: string;
+      ctaApply: string;
+      datesNote: string;
+      saleBadge: string;
+      wasPrice: string;
+      statDiscount: string;
+      statDaysLeft: string;
+      collageAlt: string;
+    };
     services: {
       badge: string;
       title: string;

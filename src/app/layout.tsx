@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Great_Vibes, Inter, Montserrat, Playfair_Display } from "next/font/google";
 import NavbarEverfit from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getDictionary } from "@/i18n";
@@ -18,6 +18,20 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: "--font-script",
+  weight: "400",
   display: "swap",
 });
 
@@ -48,7 +62,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${montserrat.variable} ${playfair.variable} ${greatVibes.variable} antialiased`}
+      >
         <a href="#main-content" className="skip-link">
           {dict.layout.skipToContent}
         </a>

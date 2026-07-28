@@ -28,7 +28,7 @@ export function Input({
   return (
     <input
       className={cn(
-        "w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-everfit-charcoal",
+        "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-everfit-charcoal sm:py-2.5 sm:text-sm",
         "placeholder:text-gray-400",
         "transition-[border-color,box-shadow] duration-200",
         "focus:border-everfit-wine focus:outline-none focus:ring-2 focus:ring-everfit-wine/20",
@@ -47,7 +47,7 @@ export function Select({
   return (
     <select
       className={cn(
-        "w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-everfit-charcoal",
+        "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-everfit-charcoal sm:py-2.5 sm:text-sm",
         "transition-[border-color,box-shadow] duration-200",
         "focus:border-everfit-wine focus:outline-none focus:ring-2 focus:ring-everfit-wine/20",
         className
@@ -66,7 +66,7 @@ export function Textarea({
   return (
     <textarea
       className={cn(
-        "w-full resize-y rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-everfit-charcoal",
+        "w-full resize-y rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-everfit-charcoal sm:py-2.5 sm:text-sm",
         "placeholder:text-gray-400",
         "transition-[border-color,box-shadow] duration-200",
         "focus:border-everfit-wine focus:outline-none focus:ring-2 focus:ring-everfit-wine/20",

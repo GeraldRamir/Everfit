@@ -1,4 +1,4 @@
-import Hero from "@/components/home/Hero";
+import HomeHero from "@/components/home/HomeHero";
 import Services from "@/components/home/Services";
 import FeaturedPlans from "@/components/home/FeaturedPlans";
 import WhyJoin from "@/components/home/WhyJoin";
@@ -22,11 +22,20 @@ export const dynamic = "force-dynamic";
 
 const PLAN_ORDER = ["everfit-ignite", "everfit-power", "everfit-elite"];
 
-export default async function HomePage() {
+type Props = {
+  searchParams: Promise<{ previewAnniversary?: string }>;
+};
+
+export default async function HomePage({ searchParams }: Props) {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { services: rawServices, plans: rawPlans, challenges: rawChallenges, recipes: rawRecipes, testimonials: rawTestimonials } =
-    await getHomeData();
+  const {
+    services: rawServices,
+    plans: rawPlans,
+    challenges: rawChallenges,
+    recipes: rawRecipes,
+    testimonials: rawTestimonials,
+  } = await getHomeData();
 
   const services = localizeServices(rawServices, locale, dict.cms);
   const challenges = localizeChallenges(rawChallenges, locale, dict.cms);
@@ -43,7 +52,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero />
+      <HomeHero searchParams={searchParams} />
       <Services services={services} />
       <FeaturedPlans plans={plans} />
       <WhyJoin />

@@ -37,11 +37,11 @@ export default function Hero() {
             theme="light"
             width={300}
             height={76}
-            className="animate-fade-in mx-auto mb-10"
+            className="animate-fade-in mx-auto mb-8 h-auto w-[min(100%,300px)] sm:mb-10"
             priority
           />
 
-          <h1 className="animate-fade-in-delay mb-6 font-display text-[2.5rem] font-bold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="animate-fade-in-delay mb-6 font-display text-[2.25rem] font-bold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
             {hero.titleLine1}
             <br />
             <span className="bg-gradient-to-r from-everfit-orange to-[#ff6b6b] bg-clip-text text-transparent">
@@ -53,12 +53,12 @@ export default function Hero() {
             {hero.description}
           </p>
 
-          <div className="animate-fade-in-delay mb-16 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link href="/planes" className="btn-everfit-orange min-w-[200px] px-8 py-3.5 text-base">
+          <div className="animate-fade-in-delay mb-16 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <Link href="/planes" className="btn-everfit-orange w-full px-8 py-3.5 text-base sm:w-auto sm:min-w-[200px]">
               {hero.viewPlans}
               <ChevronRight size={18} aria-hidden="true" />
             </Link>
-            <Link href="/solicitud" className="btn-everfit-ghost min-w-[200px] px-8 py-3.5 text-base">
+            <Link href="/solicitud" className="btn-everfit-ghost w-full px-8 py-3.5 text-base sm:w-auto sm:min-w-[200px]">
               {hero.freeConsultation}
             </Link>
           </div>

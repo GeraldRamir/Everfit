@@ -68,8 +68,8 @@ export default async function SolicitudPage({ searchParams }: Props) {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:p-8">
-              <h2 className="mb-2 font-display text-2xl font-bold text-everfit-wine">
+            <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm md:p-6 lg:p-8">
+              <h2 className="mb-2 font-display text-xl font-bold text-everfit-wine md:text-2xl">
                 {solicitud.formTitle}
               </h2>
               <p className="mb-6 text-sm text-gray-600">{solicitud.formSubtitle}</p>

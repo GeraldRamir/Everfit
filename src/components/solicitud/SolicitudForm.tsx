@@ -156,7 +156,7 @@ export default function SolicitudForm({
           </FieldGroup>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <FieldGroup label={form.age} htmlFor="solicitud-age">
             <Input
               id="solicitud-age"
@@ -246,7 +246,7 @@ export default function SolicitudForm({
         <div>
           <p className="mb-1 text-sm font-semibold text-everfit-charcoal">{form.photosTitle}</p>
           <p className="mb-4 text-sm text-gray-600">{form.photosHint}</p>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {photoFields.map(({ key, label, hint }) => (
               <FieldGroup key={key} label={label} htmlFor={`solicitud-${key}`}>
                 <Input
@@ -255,7 +255,7 @@ export default function SolicitudForm({
                   type="file"
                   accept="image/jpeg,image/png,image/webp,image/gif"
                   required
-                  className="cursor-pointer file:mr-3 file:rounded-md file:border-0 file:bg-everfit-cream file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-everfit-wine"
+                  className="max-w-full cursor-pointer text-sm file:mr-3 file:rounded-md file:border-0 file:bg-everfit-cream file:px-3 file:py-2 file:text-sm file:font-medium file:text-everfit-wine"
                   onChange={(e) => handlePhotoChange(key, e.target.files)}
                 />
                 <p className="mt-1 text-xs text-gray-500">{hint}</p>
@@ -264,7 +264,7 @@ export default function SolicitudForm({
                   <img
                     src={previews[key]}
                     alt={label}
-                    className="mt-2 h-36 w-full rounded-lg object-cover"
+                    className="mt-2 h-44 w-full rounded-lg object-cover md:h-36"
                   />
                 )}
               </FieldGroup>

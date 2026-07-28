@@ -86,45 +86,45 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
 
   return (
     <div
-      className={cn(
-        "inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-white p-0.5 text-xs font-semibold",
-        isPending && "opacity-60",
-        className
-      )}
-      role="group"
-      aria-label="Language"
-    >
-      <button
-        type="button"
-        onClick={() => setLocale("es")}
-        disabled={isPending}
         className={cn(
-          "rounded-md px-2 py-1 transition-colors",
-          locale === "es"
-            ? "bg-everfit-wine text-white"
-            : "text-gray-500 hover:text-everfit-wine"
+          "inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-white p-1 text-xs font-semibold",
+          isPending && "opacity-60",
+          className
         )}
-        aria-pressed={locale === "es"}
+        role="group"
+        aria-label="Language"
       >
-        ES
-      </button>
-      <span className="text-gray-300 select-none" aria-hidden="true">
-        |
-      </span>
-      <button
-        type="button"
-        onClick={() => setLocale("en")}
-        disabled={isPending}
-        className={cn(
-          "rounded-md px-2 py-1 transition-colors",
-          locale === "en"
-            ? "bg-everfit-wine text-white"
-            : "text-gray-500 hover:text-everfit-wine"
-        )}
-        aria-pressed={locale === "en"}
-      >
-        EN
-      </button>
-    </div>
+        <button
+          type="button"
+          onClick={() => setLocale("es")}
+          disabled={isPending}
+          className={cn(
+            "min-h-11 min-w-11 rounded-md px-3 py-2 transition-colors sm:min-h-0 sm:min-w-0 sm:px-2 sm:py-1",
+            locale === "es"
+              ? "bg-everfit-wine text-white"
+              : "text-gray-500 hover:text-everfit-wine"
+          )}
+          aria-pressed={locale === "es"}
+        >
+          ES
+        </button>
+        <span className="text-gray-300 select-none" aria-hidden="true">
+          |
+        </span>
+        <button
+          type="button"
+          onClick={() => setLocale("en")}
+          disabled={isPending}
+          className={cn(
+            "min-h-11 min-w-11 rounded-md px-3 py-2 transition-colors sm:min-h-0 sm:min-w-0 sm:px-2 sm:py-1",
+            locale === "en"
+              ? "bg-everfit-wine text-white"
+              : "text-gray-500 hover:text-everfit-wine"
+          )}
+          aria-pressed={locale === "en"}
+        >
+          EN
+        </button>
+      </div>
   );
 }

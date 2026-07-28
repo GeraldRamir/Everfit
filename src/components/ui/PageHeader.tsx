@@ -10,7 +10,7 @@ type PageHeaderProps = {
 export default function PageHeader({ title, subtitle, badge, image }: PageHeaderProps) {
   return (
     <section
-      className="relative overflow-hidden pb-16 pt-32 text-white md:pb-20 md:pt-36"
+      className="relative overflow-hidden pb-12 pt-28 text-white md:pb-20 md:pt-36"
       style={
         image
           ? {
@@ -25,7 +25,7 @@ export default function PageHeader({ title, subtitle, badge, image }: PageHeader
         {badge && (
           <span className="badge-everfit mb-4 inline-block bg-white/10 text-white">{badge}</span>
         )}
-        <h1 className="font-display text-4xl font-bold tracking-tight text-balance md:text-5xl lg:text-6xl">
+        <h1 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
           {title}
         </h1>
         {subtitle && (

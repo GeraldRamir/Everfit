@@ -727,6 +727,9 @@ export const es: Dictionary = {
     formTitle: "Formulario de solicitud",
     formSubtitle:
       "Incluye email y servicio de interés para poder contactarte. Al enviar, Michelle recibirá una notificación.",
+    anniversaryDiscountTitle: "50% OFF por aniversario",
+    anniversaryDiscountMessage:
+      "Tienes un 50% de descuento aplicado en todos los planes por el aniversario de Everfit. Al enviar tu solicitud, Michelle te contactará con este beneficio activo.",
     form: {
       success: "Solicitud enviada correctamente. Te contactaré pronto.",
       submitError: "Error al enviar",

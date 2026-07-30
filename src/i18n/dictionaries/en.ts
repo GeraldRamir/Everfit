@@ -726,6 +726,9 @@ export const en: Dictionary = {
     formTitle: "Application form",
     formSubtitle:
       "Include your email and service of interest so we can reach you. Michelle will get a notification when you submit.",
+    anniversaryDiscountTitle: "50% OFF anniversary deal",
+    anniversaryDiscountMessage:
+      "You have a 50% discount applied on all plans for Everfit's anniversary. When you submit this application, Michelle will contact you with this benefit active.",
     form: {
       success: "Application sent successfully. I'll contact you soon.",
       submitError: "Error sending",

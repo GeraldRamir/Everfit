@@ -400,6 +400,8 @@ export type Dictionary = {
     contactLink: string;
     formTitle: string;
     formSubtitle: string;
+    anniversaryDiscountTitle: string;
+    anniversaryDiscountMessage: string;
     form: {
       success: string;
       submitError: string;

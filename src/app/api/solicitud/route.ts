@@ -20,11 +20,14 @@ export async function POST(request: Request) {
     const res = await fetch(`${API_URL}/api/public/solicitud`, {
       method: "POST",
       body: formData,
+      // Don't set Content-Type — fetch sets multipart boundary automatically.
+      cache: "no-store",
     });
 
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {
+      console.error("Solicitud admin error:", res.status, data);
       return NextResponse.json(
         { error: data.error ?? dict.api.contactSendFailed },
         { status: res.status }
@@ -32,7 +35,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(data, { status: res.status });
-  } catch {
+  } catch (err) {
+    console.error("Solicitud proxy error:", err, "API_URL=", API_URL);
     return NextResponse.json(
       { error: dict.api.contactAdminOffline },
       { status: 503 }

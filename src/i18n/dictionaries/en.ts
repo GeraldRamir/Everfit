@@ -761,7 +761,7 @@ export const en: Dictionary = {
       goal: "What is your goal?",
       goalPlaceholder: "Describe your main goal…",
       photosTitle: "Three photos",
-      photosHint: "Front, back, and side. JPG, PNG, or WEBP. Max 5 MB each.",
+      photosHint: "Front, back, and side. JPG, PNG, or WEBP. Max 1.5 MB each.",
       photoFront: "Front",
       photoFrontHint: "Front photo",
       photoBack: "Back",

@@ -762,7 +762,7 @@ export const es: Dictionary = {
       goal: "¿Cuál es tu meta?",
       goalPlaceholder: "Describe tu meta principal…",
       photosTitle: "Tres fotos",
-      photosHint: "Frente, espalda y de lado. JPG, PNG o WEBP. Máx. 5 MB cada una.",
+      photosHint: "Frente, espalda y de lado. JPG, PNG o WEBP. Máx. 1.5 MB cada una.",
       photoFront: "Frente",
       photoFrontHint: "Foto de frente",
       photoBack: "Espalda",
